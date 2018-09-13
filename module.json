@@ -1,0 +1,5 @@
+{
+	"disableAutoUpdate": false,
+	"servers": ["https://raw.githubusercontent.com/Owyn/debug-logger/master/"],
+	"supportUrl": "https://github.com/Owyn/debug-logger/issues"
+}
