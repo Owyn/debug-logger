@@ -5,10 +5,6 @@ module.exports = function DebugLogger(dispatch) {
 	let filepath = path.join(__dirname, '..', '..', 'tera-proxy-' + Date.now() + '.log')
 	let file = fs.createWriteStream(filepath, {highWaterMark: 1024*1024});
 	
-	process.on('exit', ()=> {
-		file.end('<---- TERA proxy TERMINATED ---->\r\n');
-	});
-	
 	this.destructor = function()
 	{
 		file.end('<---- TERA proxy UNLOADED ---->\r\n');
