@@ -18,7 +18,7 @@ module.exports = function DebugLogger(dispatch) {
 	
 	command.add('log', () => {
 		enabled = !enabled;
-		command.message('Logging' + (enabled ? 'enabled' : 'disabled'));
+		command.message('Logging: ' + (enabled ? 'ON' : 'OFF'));
 		if(enabled)
 		{
 			filepath = path.join(__dirname, '..', '..', 'tera-proxy-' + Date.now() + '.log');
