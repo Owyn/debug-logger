@@ -1,4 +1,10 @@
 # debug-logger
-logs all packets to a logfile (in "\Tera Proxy\bin" folder)
+logs all packets to a logfile (two folders up)
 
 <img src=https://i.imgur.com/NNHsGhx.jpg>
+
+## Usage (proxy command)
+### `logger`
+- Toggle on/off (default is off)
+
+

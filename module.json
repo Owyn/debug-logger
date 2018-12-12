@@ -1,5 +1,11 @@
 {
 	"disableAutoUpdate": false,
+	"name": "debug-logger",
+	"author": "Owyn",
+	"description": "Logs ALL tera packets to a logfile",
+	"options": {
+		"niceName": "Debug Logger"
+	},
 	"servers": ["https://raw.githubusercontent.com/Owyn/debug-logger/master/"],
 	"supportUrl": "https://github.com/Owyn/debug-logger/issues"
 }
