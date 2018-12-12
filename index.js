@@ -2,7 +2,7 @@ const path = require('path'),
 		fs = require('fs');
 
 module.exports = function DebugLogger(dispatch) {
-	const command = dispatch.commandl;
+	const command = dispatch.command;
 	let hook = null;
 	let enabled = false;
 	let filepath = null;
