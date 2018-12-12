@@ -16,7 +16,7 @@ module.exports = function DebugLogger(dispatch) {
 		}
 	}
 	
-	command.add('logger', () => {
+	command.add('log', () => {
 		enabled = !enabled;
 		command.message('Logging' + (enabled ? 'enabled' : 'disabled'));
 		if(enabled)
