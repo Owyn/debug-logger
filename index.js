@@ -5,7 +5,7 @@ module.exports = function DebugLogger(dispatch) {
 	const command = dispatch.commandl;
 	let hook = null;
 	let enabled = false;
-	let filepath = path.join(__dirname, '..', '..', 'tera-proxy-' + Date.now() + '.log')
+	let filepath = null;
 	let file = null;
 	
 	this.destructor = function()
@@ -21,6 +21,7 @@ module.exports = function DebugLogger(dispatch) {
 		command.message('Logging' + (enabled ? 'enabled' : 'disabled'));
 		if(enabled)
 		{
+			filepath = path.join(__dirname, '..', '..', 'tera-proxy-' + Date.now() + '.log');
 			file = fs.createWriteStream(filepath, {highWaterMark: 1024*1024});
 			file.write('<---- Hook ENABLED ---->\r\n');
 			dohook();
