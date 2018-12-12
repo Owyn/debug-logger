@@ -37,7 +37,7 @@ module.exports = function DebugLogger(dispatch) {
 	{
 		hook = dispatch.hook('*', 'raw', { order: 999999, filter: { fake: null, silenced: null, modified: null} }, (code, data, fromServer, fake) => {
 			let today = new Date();
-			file.write("[" + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds() + ":" + today.getMilliseconds() + "]	" + (fromServer ? '<-' : '->') + '	' + (fake ? '[CRAFTED]	' : '') + (data.$silenced ? '[BLOCKED]	' : '') + (data.$modified ? '[EDITED]	' : '') + ( (!fake && !data.$silenced && !data.$modified) ? '         	' : '') + (dispatch.protocolMap.code.get(code) || code) + '	' + data.toString('hex') + '\r\n', (function(){}))
+			file.write("[" + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds() + ":" + today.getMilliseconds() + "]	" + (fromServer ? '<-' : '->') + '	' + (fake ? '[CRAFTED]	' : '') + (data.$silenced ? '[BLOCKED]	' : '') + (data.$modified ? '[EDITED]	' : '') + ( (!fake && !data.$silenced && !data.$modified) ? '         	' : '') + (dispatch.dispatch.protocolMap.code.get(code) || code) + '	' + data.toString('hex') + '\r\n', (function(){}))
 		});
 	}
 }
